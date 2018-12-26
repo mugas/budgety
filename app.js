@@ -42,6 +42,7 @@ var budgetController = (function() {
       exp: 0,
       inc: 0
     },
+    topic: ["home", "job"],
     budget: 0,
     percentage: -1 // means that doesn't exist
   };
