@@ -235,7 +235,14 @@ var UIController = (function() {
 
     displayBudget: function(obj) {
       var type;
-      obj.budget > 0 ? (type = "inc") : (type = "exp");
+      var budgetLabel = document.querySelector(".budget__value");
+      if (obj.budget > 0) {
+        type = "inc";
+        budgetLabel.classList.add("active");
+      } else if (obj.budget < 0) {
+        type = "exp";
+        budgetLabel.classList.add("secondActive");
+      }
 
       document.querySelector(DOMstrings.budgetLabel).textContent = formatNumber(
         obj.budget,
